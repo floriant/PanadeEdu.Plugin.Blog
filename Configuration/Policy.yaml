@@ -1,0 +1,12 @@
+
+resources:
+  methods:
+    'PanadeEdu.Plugin.Blog:PostController': 'method(PanadeEdu\Plugin\Blog\Controller\PostController->createAction())'
+    'PanadeEdu.Plugin.Blog:Frontend': 'method(PanadeEdu\Plugin\Blog\Controller\PostController->(index|rss)Action()) || method(PanadeEdu\Plugin\Blog\Controller\CommentController->(create|error)Action())'
+acls:
+  'TYPO3.Neos:Editor':
+    methods:
+      'PanadeEdu.Plugin.Blog:PostController': GRANT
+  Everybody:
+    methods:
+      'PanadeEdu.Plugin.Blog:Frontend': GRANT
